@@ -16,7 +16,7 @@ from lit.llvm.subst import FindTool
 # Configuration file for the 'lit' test runner.
 
 # name: The name of this test suite.
-config.name = 'STANDALONE_OPT'
+config.name = 'STANDALONE'
 
 config.test_format = lit.formats.ShTest(not llvm_config.use_lit_shell)
 
@@ -30,7 +30,6 @@ config.test_source_root = os.path.dirname(__file__)
 config.test_exec_root = os.path.join(config.standalone_obj_root, 'test')
 
 config.substitutions.append(('%PATH%', config.environment['PATH']))
-config.substitutions.append(('%shlibext', config.llvm_shlib_ext))
 
 llvm_config.with_system_environment(
     ['HOME', 'INCLUDE', 'LIB', 'TMP', 'TEMP'])
