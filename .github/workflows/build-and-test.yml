@@ -25,7 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Configure Environment
-        run: echo "$GITHUB_WORKSPACE/llvm-project/prefix/bin" >> "$GITHUB_PATH"
+        run: |
+          echo "$GITHUB_WORKSPACE/llvm-project/prefix/bin" >> "$GITHUB_PATH"
+          pip install --upgrade cmake
       - name: Get Template Code
         uses: actions/checkout@v2
         with:
