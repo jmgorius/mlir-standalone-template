@@ -5,6 +5,8 @@ set(LIBS
         ${conversion_libs}
         MLIROptLib
         MLIRStandalone
+        MLIRRegisterAllDialects
+        MLIRRegisterAllPasses
         )
 add_llvm_executable(standalone-opt standalone-opt.cpp)
 
