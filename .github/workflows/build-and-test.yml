@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get Template Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
       - name: clang-format
         uses: DoozyX/clang-format-lint-action@v0.6
         with:
@@ -29,12 +29,12 @@ jobs:
           echo "$GITHUB_WORKSPACE/llvm-project/prefix/bin" >> "$GITHUB_PATH"
           pip install --upgrade cmake
       - name: Get Template Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
         with:
           path: 'mlir-standalone-template'
       - name: Cache LLVM
         id: cache-llvm
-        uses: actions/cache@v2
+        uses: actions/cache@v5
         with:
           path: llvm-project
           key: ${{ runner.os }}-llvm-install-${{ env.LLVM_COMMIT }}
