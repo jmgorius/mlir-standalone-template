@@ -40,7 +40,7 @@ jobs:
           key: ${{ runner.os }}-llvm-install-${{ env.LLVM_COMMIT }}
       - name: Get LLVM
         if: steps.cache-llvm.outputs.cache-hit != 'true'
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
         with:
           repository: 'llvm/llvm-project'
           ref: '${{ env.LLVM_COMMIT }}'
